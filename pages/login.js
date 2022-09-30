@@ -34,7 +34,6 @@ const LoginContainer = styled.div`
     padding-left: 10px;
     font-weight: 400;
     letter-spacing: 1px;
-    background-image: url("");
     background-repeat: no-repeat;
 
     &:focus {
