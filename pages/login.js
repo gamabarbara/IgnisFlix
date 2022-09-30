@@ -1,12 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
 
+
 export default function Login() {
   return (
     <LoginContainer>
-      <p>E-mail / username</p>
-      <input type="email" />
-      <p>Senha</p>
+      <Label>E-mail/username</Label>
+      <div>
+        <input type="email" />
+      </div>
+      <Label>Senha</Label>
       <input type="password" />
     </LoginContainer>
   );
@@ -14,24 +17,36 @@ export default function Login() {
 
 const LoginContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 73px;
+  flex-direction: column;
 
-  p {
-    color: #fff;
-    font-weight: 500;
-    line-height: 24px;
-  }
+  margin-top: 73px;
 
   input {
     width: 335px;
     height: 48px;
     border-radius: 8px;
     background-color: #282828;
-    border: none;
+    border: 1px solid transparent;
+    color: #a8a8a8;
+    font-size: 15px;
+    padding-left: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background-image: url("");
+    background-repeat: no-repeat;
 
+    &:focus {
+      outline: none;
+      border-color: #3a2faf;
+    }
   }
 `;
 
+const Label = styled.p`
+  padding-top: 30px;
+  padding-bottom: 10px;
+  color: #fff;
+  width: 330px;
+`;
