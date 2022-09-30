@@ -43,6 +43,7 @@ const ContainerImage = styled.div`
   background-repeat: no-repeat;
   height: 60vh;
   padding-bottom: 100px;
+  position: static;
   img {
     z-index: 0;
     background-size: cover;

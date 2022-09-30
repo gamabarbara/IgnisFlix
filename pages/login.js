@@ -1,26 +1,25 @@
 import * as React from "react";
 import styled from "styled-components";
 
-
 export default function Login() {
   return (
-    <LoginContainer>
-      <Label>E-mail/username</Label>
-      <div>
-        <input type="email" />
-      </div>
-      <Label>Senha</Label>
-      <input type="password" />
+    <LoginContainer action="/send-data-here" method="post">
+      <Label>E-mail / username:</Label>
+      
+      <input type="email" required />
+      <Label>Senha:</Label>
+
+      <input type="password" required />
+
     </LoginContainer>
   );
 }
 
-const LoginContainer = styled.div`
+const LoginContainer = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   margin-top: 73px;
 
   input {
@@ -43,7 +42,7 @@ const LoginContainer = styled.div`
   }
 `;
 
-const Label = styled.p`
+const Label = styled.label`
   padding-top: 30px;
   padding-bottom: 10px;
   color: #fff;
