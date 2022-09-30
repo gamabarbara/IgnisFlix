@@ -3,6 +3,11 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export default function Login() {
+  const [isPasswordShown, setIsPasswordShown] = React.useState(false);
+
+  function togglePasswordVisibility() {
+    setIsPasswordShown(!isPasswordShown);
+  }
   return (
     <>
       <LoginContainer action="/send-data-here" method="post">
@@ -10,15 +15,14 @@ export default function Login() {
 
         <input type="email" required />
         <Label>Senha:</Label>
-
-        <input type="password" required />
+        <input type={isPasswordShown ? "text" : "password"} required />
+        <ToggleButton
+          src={isPasswordShown ? "images/eye-slash.png" : "images/eye.png"}
+          onClick={togglePasswordVisibility}
+        />
       </LoginContainer>
       <ContainerButton>
-        <Btn>
-          <Link href="/login">
-            <a>Começar a ver filmes</a>
-          </Link>
-        </Btn>
+        <Btn>Entrar</Btn>
       </ContainerButton>
     </>
   );
@@ -59,30 +63,37 @@ const Label = styled.label`
 `;
 
 const ContainerButton = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-top: 350px;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 350px;
+`;
 
 const Btn = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 335px;
-height: 48px;
-background-color: #F52D2D;
-color: #fff;
-border-radius: 8px;
-border: none;
-font-size: 16px;
-font-weight: 700;
-&:hover {
-    opacity: .8;
-}
-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 48px;
+  background-color: #f52d2d;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
+  a {
     text-decoration: none;
     color: #fff;
-}
-`
+  }
+`;
+
+const ToggleButton = styled.img`
+  cursor: pointer;
+  position: relative;
+  bottom: 35px;
+  left: 140px;
+`;
