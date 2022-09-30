@@ -10,7 +10,6 @@ return(
     </Head>
     <Logo />
     <main className="main-container">{children}</main>
-    <Button />
     </>
 )
 }

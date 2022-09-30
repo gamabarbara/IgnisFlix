@@ -1,5 +1,5 @@
-import styled from "styled-components";
-
+import styled from "styled-components"
+import Link from "next/link"
 export default function Home() {
   return (
     <>
@@ -10,6 +10,13 @@ export default function Home() {
       <ContainerImage>
         <img src="./images/Persona.png" />
       </ContainerImage>
+      <ContainerButton>
+        <Btn>
+          <Link href="/login">
+            <a>Começar a ver filmes</a>
+          </Link>
+        </Btn>
+      </ContainerButton>
     </>
   );
 }
@@ -47,5 +54,32 @@ const ContainerImage = styled.div`
   img {
     z-index: 0;
     background-size: cover;
+  }
+`;
+
+const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Btn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  height: 48px;
+  background-color: #f52d2d;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
   }
 `;
