@@ -1,27 +1,6 @@
 import styled from "styled-components"
-import Link from "next/link"
-export default function Home() {
-  return (
-    <>
-      <ContainerText>
-        <h1>Do sofá pro seu celular</h1>
-        <p>A revolução do cinema na sua casa.</p>
-      </ContainerText>
-      <ContainerImage>
-        <img src="./images/Persona.png" />
-      </ContainerImage>
-      <ContainerButton>
-        <Btn>
-          <Link href="/login">
-            <a>Começar a ver filmes</a>
-          </Link>
-        </Btn>
-      </ContainerButton>
-    </>
-  );
-}
 
-const ContainerText = styled.div`
+export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +20,7 @@ const ContainerText = styled.div`
   }
 `;
 
-const ContainerImage = styled.div`
+export const ContainerImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,13 +36,13 @@ const ContainerImage = styled.div`
   }
 `;
 
-const ContainerButton = styled.div`
+export const ContainerButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const Btn = styled.div`
+export const Btn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

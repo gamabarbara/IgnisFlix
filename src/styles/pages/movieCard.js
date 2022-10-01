@@ -1,22 +1,6 @@
-import styled from "styled-components";
-import Image from "next/image";
-export default function MovieCard() {
-  return (
-    <ContainerCard>
-      <Imagem>
-        <Image src="/images/image.png" width="154" height="231" />
-      </Imagem>
+import styled from "styled-components"
 
-      <InfoMovie>
-        <h1>Dilwale Dulhania</h1>
-        <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <a>ver mais</a>
-      </InfoMovie>
-    </ContainerCard>
-  );
-}
-
-const ContainerCard = styled.div`
+export const ContainerCard = styled.div`
   border-radius: 8px;
   margin-bottom: 20px;
   position: relative;
@@ -60,7 +44,7 @@ const ContainerCard = styled.div`
   }
 `;
 
-const InfoMovie = styled.div`
+export const InfoMovie = styled.div`
   background-color: #282828;
   border-radius: 8px 8px 8px 8px;
   padding-top: 10px;
@@ -69,6 +53,6 @@ const InfoMovie = styled.div`
   z-index: 0;
 `;
 
-const Imagem = styled.div`
+export const Imagem = styled.div`
   z-index: 1000;
 `;

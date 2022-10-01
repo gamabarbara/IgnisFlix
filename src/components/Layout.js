@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Button from "./Button"
 import Logo from "./Logo"
 export default function Layout({children}) {
 return(

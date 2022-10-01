@@ -1,5 +1,6 @@
-import styled from "styled-components"
+
 import Image from "next/image"
+import { ContainerImage } from "../styles/pages/logo"
 
 export default function Logo() {
     return(
@@ -9,9 +10,3 @@ export default function Logo() {
     )
 }
 
-const ContainerImage = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 69px;
-`

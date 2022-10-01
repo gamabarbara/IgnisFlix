@@ -1,34 +1,5 @@
-import * as React from "react";
 import styled from "styled-components";
-import Link from "next/link";
-
-export default function Login() {
-  const [isPasswordShown, setIsPasswordShown] = React.useState(false);
-
-  function togglePasswordVisibility() {
-    setIsPasswordShown(!isPasswordShown);
-  }
-  return (
-    <>
-      <LoginContainer action="/send-data-here" method="post">
-        <Label>E-mail / username:</Label>
-
-        <input type="email" required />
-        <Label>Senha:</Label>
-        <input type={isPasswordShown ? "text" : "password"} required />
-        <ToggleButton
-          src={isPasswordShown ? "images/eye-slash.png" : "images/eye.png"}
-          onClick={togglePasswordVisibility}
-        />
-      </LoginContainer>
-      <ContainerButton>
-        <Btn>Entrar</Btn>
-      </ContainerButton>
-    </>
-  );
-}
-
-const LoginContainer = styled.form`
+export const LoginContainer = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,14 +26,14 @@ const LoginContainer = styled.form`
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   padding-top: 30px;
   padding-bottom: 10px;
   color: #fff;
   width: 330px;
 `;
 
-const ContainerButton = styled.div`
+export const ContainerButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +41,7 @@ const ContainerButton = styled.div`
   top: 350px;
 `;
 
-const Btn = styled.div`
+export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +62,7 @@ const Btn = styled.div`
   }
 `;
 
-const ToggleButton = styled.img`
+export const ToggleButton = styled.img`
   cursor: pointer;
   position: relative;
   bottom: 35px;

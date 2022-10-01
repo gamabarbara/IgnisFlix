@@ -1,26 +1,12 @@
 import styled from "styled-components"
-import Link from "next/link"
 
-export default function Button() {
-    return(
-        <ContainerButton>
-            <Btn>
-             <Link href="/login">
-                <a>Começar a ver filmes</a>
-             </Link>
-             </Btn>
-        </ContainerButton>
-       
-    )
-}
-
-const ContainerButton = styled.div`
+export const ContainerButton = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 `
 
-const Btn = styled.div`
+export const Btn = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
