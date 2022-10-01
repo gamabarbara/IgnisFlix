@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "styles/pages/movies.js"  ],
+, "styles/pages/movies.js", "src/styles/pages/button.js", "src/styles/pages/home.js", "src/styles/pages/login.js", "src/styles/pages/logo.js", "src/styles/pages/movieCard.js", "src/styles/pages/movies.js", "src/styles/pages/movieTop.js"  ],
   "exclude": [
     "node_modules"
   ]
