@@ -9,12 +9,15 @@ export default function Movies() {
         <MovieTop />
         <ContainerInput>
           <Input placeholder="Buscar filme" />
-          <img src="/images/Vector.png" width="18" height="18" />
+          <Image src="/images/Vector.png" width="18" height="18" />
         </ContainerInput>
         <>
           <Title>Filmes</Title>
         </>
         <MovieContainer>
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
           <MovieCard />
         </MovieContainer>
       </Container>
@@ -54,14 +57,19 @@ const ContainerInput = styled.div`
 `;
 
 const MovieContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  display: relative;
-  h1 {
-  }
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+position: relative;
+margin: 0 auto;
+width: 350px;
+height: 400px;
+overflow-x: hidden;
+&::-webkit-scrollbar {
+  display: none;
+}
 `;
 
 const Title = styled.h1`
@@ -76,6 +84,13 @@ const Title = styled.h1`
   right: 130px;
   margin-bottom: 29px;
 `;
+
+const Image = styled.img`
+cursor: pointer;
+&:hover {
+  opacity: .8;
+}
+`
 
 const ContainerButton = styled.div`
   display: flex;
@@ -101,5 +116,6 @@ const Btn = styled.div`
   a {
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
   }
 `;
