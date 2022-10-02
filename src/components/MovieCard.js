@@ -1,11 +1,14 @@
-import Image from "next/image";
-import { ContainerCard, Imagem, InfoMovie } from "../styles/pages/movieCard";
+import {
+  ContainerCard,
+  ImageMovie,
+  InfoMovie,
+} from "../styles/pages/movieCard";
 export default function MovieCard(props) {
   return (
     <ContainerCard>
-      <Imagem>
-<Image src={props.image} width="154" height="231" /> 
-      </Imagem>
+      <>
+        <ImageMovie src={props.image} width="154" height="231" />
+      </>
 
       <InfoMovie>
         <h1>{props.title}</h1>

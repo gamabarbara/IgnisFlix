@@ -39,6 +39,7 @@ export const ContainerButton = styled.div`
   align-items: center;
   position: relative;
   top: 350px;
+  cursor: pointer;
 `;
 
 export const Btn = styled.button`
@@ -53,6 +54,7 @@ export const Btn = styled.button`
   border: none;
   font-size: 16px;
   font-weight: 700;
+  cursor: pointer;
   &:hover {
     opacity: 0.8;
   }

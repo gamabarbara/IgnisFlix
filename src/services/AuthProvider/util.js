@@ -1,26 +1,25 @@
 import { Api } from "../api";
-import React, { createContext, useEffect, useState } from "react";
 
 export function setUserLocalStorage() {
-  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem("user", JSON.stringify(user));
 }
 
 export function getUserLocalStorage() {
-  const json = localStorage.getItem('user');
+  const json = localStorage.getItem("user");
 
   if (!json) {
     return null;
   }
-  const user = JSON.parse(json)
+  const user = JSON.parse(json);
 
   return user ?? null;
 }
 
 export async function LoginRequest(email, password) {
   try {
-    const request = await Api.post('login', { email, password })
+    const request = await Api.post("login", { email, password });
 
-    const payload = { token: request.data.accessToken.token, email }
+    const payload = { token: request.data.accessToken.token, email };
 
     setUser(payload);
     setUserLocalStorage(payload);
