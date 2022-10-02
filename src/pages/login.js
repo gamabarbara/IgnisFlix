@@ -1,7 +1,7 @@
 import * as React from "react";
+
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { LoginRequest } from "../services/AuthProvider/util";
 import {
   Btn,
   ContainerButton,
@@ -9,6 +9,7 @@ import {
   LoginContainer,
   ToggleButton,
 } from "../styles/pages/login";
+import { LoginRequest } from "../services/AuthProvider/util";
 
 export default function Login() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -20,7 +21,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await LoginRequest(email, password);
-      await router.push("/movies")
+      await router.push("/movies");
     } catch (error) {
       console.log(error);
     }

@@ -1,5 +1,5 @@
 import Head from "next/head"
-import Logo from "./Logo"
+import Logo from "../components/Logo"
 export default function Layout({children}) {
 return(
     <>

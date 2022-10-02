@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "styles/pages/movies.js", "src/styles/pages/button.js", "src/styles/pages/home.js", "src/styles/pages/login.js", "src/styles/pages/logo.js", "src/styles/pages/movieCard.js", "src/styles/pages/movies.js", "src/styles/pages/movieTop.js"  ],
+, "styles/pages/movies.js", "src/styles/pages/button.js", "src/styles/pages/home.js", "src/styles/pages/login.js", "src/styles/pages/logo.js", "src/styles/pages/movieCard.js", "src/styles/pages/movies.js", "src/styles/pages/movieTop.js", "src/components/MovieTop.js", "src/components/MovieCard.js", "src/components/Logo.js", "src/components/Layout.js", "src/components/Button.js", "src/pages/movies.js", "src/pages/login.js", "src/pages/index.js", "src/pages/_app.js", "src/pages/api/hello.js"  ],
   "exclude": [
     "node_modules"
   ]
