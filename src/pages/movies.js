@@ -13,12 +13,12 @@ import {
 } from "../styles/pages/movies";
 import { useState } from "react";
 import { Instance } from "../services/api";
-
+import { off } from "process";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [visible, setVisible] = useState(4);
-
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function getData() {
@@ -34,7 +34,6 @@ export default function Movies() {
 
   const loadMore = () => {
     setVisible(visible + 4);
-
   };
 
   if (movies != null) {
@@ -43,14 +42,32 @@ export default function Movies() {
         <Container>
           <MovieTop />
           <ContainerInput>
-            <Input placeholder="Buscar filme" />
+            <Input
+              placeholder="Buscar filme"
+              type="text"
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
             <Image src="/images/Vector.png" width="18" height="18" />
           </ContainerInput>
+
           <>
             <Title>Filmes</Title>
           </>
           <MovieContainer>
-            {movies.slice(0, visible).map(renderMovies)}
+            {movies
+              .slice(0, visible)
+              .filter((value) => {
+                if (searchTerm === "") {
+                  return value;
+                } else if (
+                  value.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return value;
+                }
+              })
+              .map(renderMovies)}
           </MovieContainer>
         </Container>
         <ContainerButton>
