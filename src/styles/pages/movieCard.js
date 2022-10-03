@@ -21,7 +21,6 @@ export const ContainerCard = styled.div`
       font-size: 15px;
       margin-top: 5px;
     }
-    
   }
   p {
     font-weight: 400;
@@ -112,4 +111,86 @@ export const ProgressBar = styled.div`
     border-radius: 50%;
     background-color: #000;
   }
+`;
+
+export const BackdropImage = styled.img`
+  width: 336px;
+  height: 334px;
+  border-radius: 5px;
+`;
+
+export const BackdropInfo = styled.div`
+  width: 335px;
+  height: fit-content;
+  background-color: #282828;
+  border-radius: 8px;
+  padding-top: 20px;
+  z-index: -1;
+  position: relative;
+  bottom: 15px;
+  h1 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    padding-top: 28px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }
+  p {
+    width: 307px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #a8a8a8;
+    line-height: 18px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+  }
+  a {
+    font-size: 10px;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    padding-bottom: 10px;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+  }
+`;
+
+export const BackProgressBar = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  bottom: 290px;
+  @media (min-width: 1025px) {
+    bottom: 290px;
+    left: 10px;
+    position: absolute;
+  }
+
+  .back-outer {
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+    background: linear-gradient(#f52d2d, #3a2faf);
+    border-radius: 50%;
+  }
+  .back-inner {
+    height: 36px;
+    width: 36px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 100700;
+    border-radius: 50%;
+    background-color: #000;
+  }
+`;
+
+export const ContainerBack = styled.div`
+  position: relative;
 `;

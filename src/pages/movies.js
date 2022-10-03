@@ -80,6 +80,8 @@ const renderMovies = (movie, i) => {
       title={movie.title}
       image={movie.poster_path}
       percentage={movie.vote_average}
+      backdrop={movie.backdrop_path}
+      overview={movie.overview}
     />
   );
 };
