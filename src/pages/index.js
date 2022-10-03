@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Btn, ContainerButton, ContainerImage, ContainerText, Content} from "../styles/pages/home";
 export default function Home() {
+  
   return (
     <>
       <ContainerText>

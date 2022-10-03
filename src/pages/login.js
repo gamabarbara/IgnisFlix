@@ -3,7 +3,8 @@ import * as React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Btn, ContainerButton, Label, LoginContainer, ToggleButton } from "../styles/pages/login";
-import { LoginRequest } from "../services/AuthProvider/util";
+import { LoginRequest } from "../services/auth";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Login() {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -14,11 +15,15 @@ export default function Login() {
   const submit = async (e) => {
 
     e.preventDefault();
-    try {
-      await LoginRequest(email, password);
-      await router.push("/movies");
-    } catch (error) {
-      console.log(error);
+    if(email && password) {
+      const isLogged = await LoginRequest(email, password);
+      if(isLogged) {
+        router.push('movies');
+      } else {
+        toast.error("Email ou senha inválidos!")
+      }
+    } else {    
+      toast.error("Digite um email e/ou senha válidos!")
     }
   };
 
@@ -27,6 +32,10 @@ export default function Login() {
   }
   return (
     <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <LoginContainer method="post" onSubmit={submit}>
         <Label>E-mail / username:</Label>
         <input type="email" onChange={(e) => setEmail(e.target.value)} />

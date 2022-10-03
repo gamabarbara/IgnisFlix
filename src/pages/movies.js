@@ -9,12 +9,11 @@ import {
   Image,
   Input,
   MovieContainer,
-  Title,
-  TopDesktop
+  Title
 } from "../styles/pages/movies";
 import { useState } from "react";
 import { Instance } from "../services/api";
-import { parseCookies } from "../services/AuthProvider/util";
+import { parseCookies } from "nookies";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -23,12 +22,8 @@ export default function Movies() {
 
   useEffect(() => {
     async function getData() {
-      try {
-        const res = await Instance.get("movies");
+      const res = await Instance.get("movies")
         setMovies(res.data.results);
-      } catch (err) {
-        console.log(err);
-      }
     }
     getData();
   }, []);
@@ -41,18 +36,18 @@ export default function Movies() {
     return (
       <>
         <Container>
-            <MovieTop />
-            <ContainerInput>
-              <Input
-                placeholder="Buscar filme"
-                type="text"
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                }}
-              />
-              <Image src="/images/Vector.png" width="18" height="18" />
-            </ContainerInput>
-            <Title>Filmes</Title>
+          <MovieTop />
+          <ContainerInput>
+            <Input
+              placeholder="Buscar filme"
+              type="text"
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
+            <Image src="/images/Vector.png" width="18" height="18" />
+          </ContainerInput>
+          <Title>Filmes</Title>
           <MovieContainer>
             {movies
               .slice(0, visible)
@@ -87,21 +82,4 @@ const renderMovies = (movie, i) => {
       percentage={movie.vote_average}
     />
   );
-};
-
-export const getServerSideProps = async (ctx) => {
-  const cookies = parseCookies(ctx.req);
-  console.log(cookies.token);
-  if (!cookies) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/login",
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
 };
