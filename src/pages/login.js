@@ -2,13 +2,7 @@ import * as React from "react";
 
 import { useState } from "react";
 import { useRouter } from "next/router";
-import {
-  Btn,
-  ContainerButton,
-  Label,
-  LoginContainer,
-  ToggleButton,
-} from "../styles/pages/login";
+import { Btn, ContainerButton, Label, LoginContainer, ToggleButton } from "../styles/pages/login";
 import { LoginRequest } from "../services/AuthProvider/util";
 
 export default function Login() {
@@ -18,6 +12,7 @@ export default function Login() {
   const router = useRouter();
 
   const submit = async (e) => {
+
     e.preventDefault();
     try {
       await LoginRequest(email, password);

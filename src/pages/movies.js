@@ -13,7 +13,7 @@ import {
 } from "../styles/pages/movies";
 import { useState } from "react";
 import { Instance } from "../services/api";
-import { off } from "process";
+import { parseCookies } from "../services/AuthProvider/util";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -83,3 +83,22 @@ export default function Movies() {
 const renderMovies = (movie, i) => {
   return <MovieCard key={i} title={movie.title} image={movie.poster_path} />;
 };
+
+export const getServerSideProps = async (ctx) => {
+  const cookies = parseCookies(ctx.req);
+  console.log(cookies.token)
+  if (!cookies) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login"
+      },
+    };
+  }
+
+  return {
+    props: {
+
+    }
+  }
+}
