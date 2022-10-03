@@ -12,6 +12,10 @@ export const Input = styled.input`
     padding-left: 20px;
     color: #707070;
   }
+  @media (min-width: 1025px) {
+    width: 500px;
+    height: 55px;
+  }
 `;
 
 export const Container = styled.div`
@@ -27,6 +31,14 @@ export const ContainerInput = styled.div`
   img {
     position: relative;
     right: 40px;
+  }
+  @media (min-width: 1025px) {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
   }
 `;
 
@@ -44,6 +56,10 @@ export const MovieContainer = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  @media (min-width: 1025px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 export const Title = styled.h1`
@@ -57,12 +73,23 @@ export const Title = styled.h1`
   position: relative;
   right: 130px;
   margin-bottom: 29px;
+  @media (min-width: 1025px) {
+    font-size: 28px;
+    margin-top: 25px;
+position: relative;
+left: 5px;
+
+  }
 `;
 
 export const Image = styled.img`
   cursor: pointer;
   &:hover {
     opacity: 0.8;
+  }
+  @media (min-width: 1025px) {
+    width: 22px;
+    height: 22px;
   }
 `;
 
@@ -84,6 +111,9 @@ export const Btn = styled.div`
   border: none;
   font-size: 16px;
   font-weight: 700;
+  @media (min-width: 1025px) {
+    width: 50%;
+  }
   &:hover {
     opacity: 0.8;
   }
@@ -93,4 +123,3 @@ export const Btn = styled.div`
     cursor: pointer;
   }
 `;
-

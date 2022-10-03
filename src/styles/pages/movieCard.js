@@ -4,6 +4,9 @@ export const ContainerCard = styled.div`
   border-radius: 8px;
   margin-bottom: 20px;
   position: relative;
+  @media (min-width: 1025px) {
+    margin: 10px 20px 10px 20px;
+  }
 
   h1 {
     font-weight: 700;
@@ -13,6 +16,11 @@ export const ContainerCard = styled.div`
     letter-spacing: 1px;
     width: 140px;
     margin-bottom: 5px;
+    @media (min-width: 1025px) {
+      font-size: 15px;
+      margin-top: 5px;
+    }
+    
   }
   p {
     font-weight: 400;
@@ -21,6 +29,11 @@ export const ContainerCard = styled.div`
     height: 22px;
     color: #a8a8a8;
     margin-left: 10px;
+    @media (min-width: 1025px) {
+      font-size: 12px;
+      width: 160px;
+      margin-top: 4px;
+    }
   }
   a {
     font-weight: 400;
@@ -35,6 +48,10 @@ export const ContainerCard = styled.div`
     &:hover {
       opacity: 0.8;
     }
+    @media (min-width: 1025px) {
+      font-size: 12px;
+      right: 10px;
+    }
   }
 `;
 
@@ -47,10 +64,21 @@ export const InfoMovie = styled.div`
   z-index: -1;
   position: relative;
   bottom: 15px;
+  @media (min-width: 1025px) {
+    width: 182px;
+    height: 130px;
+  }
 `;
 
 export const ImageMovie = styled.img`
   border-radius: 8px;
+  width: 154px;
+  height: 231px;
+  @media (min-width: 1025px) {
+    background-color: rebeccapurple;
+    width: 180px;
+    height: 250px;
+  }
 `;
 
 export const ProgressBar = styled.div`
@@ -60,6 +88,9 @@ export const ProgressBar = styled.div`
   position: absolute;
   bottom: 115px;
   left: 6px;
+  @media (min-width: 1025px) {
+    bottom: 125px;
+  }
 
   .outer {
     height: 40px;

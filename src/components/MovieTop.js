@@ -1,5 +1,3 @@
-
-import Image from "next/image";
 import Link from "next/link";
 import { Arrow, MovieContainer, Welcome } from "../styles/pages/movieTop";
 
@@ -8,11 +6,11 @@ export default function MovieTop() {
     <MovieContainer>
       <Arrow>
         <Link href="/login">
-          <Image src="/images/Vector 1.png" width="7" height="13" />
+          <img src="/images/Vector 1.png" />
         </Link>
       </Arrow>
       <Welcome>
-        Bem vindo(a), <span>Bárbara</span>
+        <p>Bem vindo(a), </p> <span> Bárbara</span>
       </Welcome>
     </MovieContainer>
   );

@@ -5,25 +5,18 @@ import {
   ProgressBar,
 } from "../styles/pages/movieCard";
 export default function MovieCard(props) {
-  function changePhoto() {
-    
-  }
   return (
     <ContainerCard>
       <>
-      
-        <ImageMovie src={props.image} width="154" height="231" />
+        <ImageMovie src={props.image}/>
         <ProgressBar>
           <div className="outer">
-            <div className="inner">
-              {props.percentage * 10}%
-            </div>
+            <div className="inner">{props.percentage * 10}%</div>
           </div>
         </ProgressBar>
       </>
 
       <InfoMovie>
-  
         <h1>{props.title}</h1>
         <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         <a>ver mais</a>
