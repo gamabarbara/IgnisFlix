@@ -11,13 +11,22 @@ export const ContainerText = styled.div`
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
+    @media (min-width:1025px) {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
   }
   p {
     color: #a8a8a8;
     font-weight: 500;
     font-size: 12px;
     line-height: 24px;
+    @media (min-width:1025px) {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
   }
+
 `;
 
 export const ContainerImage = styled.div`
@@ -33,7 +42,11 @@ export const ContainerImage = styled.div`
   img {
     z-index: 0;
     background-size: cover;
+    @media (min-width:1025px) {
+      width: 400px;
+    }
   }
+  
 `;
 
 export const ContainerButton = styled.div`
@@ -60,5 +73,9 @@ export const Btn = styled.div`
   a {
     text-decoration: none;
     color: #fff;
+  }
+  @media (min-width:1025px) {
+    width: 20%;
+    margin: 0 auto;
   }
 `;

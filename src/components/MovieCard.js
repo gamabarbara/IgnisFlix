@@ -5,6 +5,9 @@ import {
   ProgressBar,
 } from "../styles/pages/movieCard";
 export default function MovieCard(props) {
+  function changePhoto() {
+    
+  }
   return (
     <ContainerCard>
       <>
