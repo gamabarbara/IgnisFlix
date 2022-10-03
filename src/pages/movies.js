@@ -81,7 +81,7 @@ export default function Movies() {
 }
 
 const renderMovies = (movie, i) => {
-  return <MovieCard key={i} title={movie.title} image={movie.poster_path} />;
+  return <MovieCard key={i} title={movie.title} image={movie.poster_path} percentage={movie.vote_average}/>;
 };
 
 export const getServerSideProps = async (ctx) => {

@@ -52,3 +52,32 @@ export const InfoMovie = styled.div`
 export const ImageMovie = styled.img`
   border-radius: 8px;
 `;
+
+export const ProgressBar = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 115px;
+  left: 6px;
+
+  .outer {
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+    background: linear-gradient(#f52d2d, #3a2faf);
+    border-radius: 50%;
+  }
+  .inner {
+    height: 36px;
+    width: 36px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 100700;
+    border-radius: 50%;
+    background-color: #000;
+  }
+`;
