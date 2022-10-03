@@ -4,6 +4,7 @@ export const ContainerCard = styled.div`
   border-radius: 8px;
   margin-bottom: 20px;
   position: relative;
+  margin-left: 15px;
   @media (min-width: 1025px) {
     margin: 10px 20px 10px 20px;
   }
