@@ -11,6 +11,7 @@ export async function LoginRequest(email, password) {
     setCookie("token", payload.token, {
       maxAge: 60 * 60 * 1
     })
+    setCookie("user", request.data.user.name)
     console.log(request.data.user.name)
     if(request.data.user && payload){
       return true;
