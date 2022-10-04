@@ -1,4 +1,5 @@
 import MovieTop from "../components/MovieTop";
+import axios from "axios";
 import MovieCard from "../components/MovieCard";
 import { useEffect } from "react";
 import {
@@ -12,18 +13,26 @@ import {
   Title
 } from "../styles/pages/movies";
 import { useState } from "react";
-import { Instance } from "../services/api";
 import { parseCookies } from "nookies";
 
 export default function Movies() {
-  const [movies, setMovies] = useState([]);
+  const { "token": token } = parseCookies();
+  const Instance = axios.create({
+    baseURL: 'https://teste.ignisdigital.tec.br/',
+    timeout: 1000,
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+  const [movies, setMovies] = useState(null);
   const [visible, setVisible] = useState(4);
   const [searchTerm, setSearchTerm] = useState("");
+
 
   useEffect(() => {
     async function getData() {
       const res = await Instance.get("movies")
-        setMovies(res.data.results);
+      setMovies(res.data.results);
     }
     getData();
   }, []);
@@ -85,3 +94,18 @@ const renderMovies = (movie, i) => {
     />
   );
 };
+
+export const getServerSideProps = async (ctx) => {
+  const { 'token': token } = parseCookies(ctx)
+  if (!token) {
+    return {
+      redirect: '/',
+      permanent: false,
+    }
+  }
+
+
+  return {
+    props: {}
+  }
+}
