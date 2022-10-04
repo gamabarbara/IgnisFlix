@@ -29,6 +29,7 @@ export const ContainerCard = styled.div`
     height: 22px;
     color: #a8a8a8;
     margin-left: 10px;
+    overflow: hidden;
     @media (min-width: 1025px) {
       font-size: 12px;
       width: 160px;
@@ -193,4 +194,5 @@ export const BackProgressBar = styled.div`
 
 export const ContainerBack = styled.div`
   position: relative;
+  margin: 0 auto;
 `;
