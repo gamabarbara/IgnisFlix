@@ -18,6 +18,10 @@ export const LoginContainer = styled.form`
     font-weight: 400;
     letter-spacing: 1px;
     background-repeat: no-repeat;
+    @media (min-width: 1025px) {
+      width: 450px;
+      height: 55px;
+    }
 
     &:focus {
       outline: none;
@@ -31,6 +35,11 @@ export const Label = styled.label`
   padding-bottom: 10px;
   color: #fff;
   width: 330px;
+  @media (min-width: 1025px) {
+    font-size: 22px;
+    padding-bottom: 15px;
+    width: 450px;
+  }
 `;
 
 export const ContainerButton = styled.div`
@@ -38,7 +47,7 @@ export const ContainerButton = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 350px;
+  top: 370px;
   cursor: pointer;
 `;
 
@@ -61,6 +70,9 @@ export const Btn = styled.button`
   a {
     text-decoration: none;
     color: #fff;
+  }
+  @media (min-width: 1025px) {
+    width: 450px;
   }
 `;
 

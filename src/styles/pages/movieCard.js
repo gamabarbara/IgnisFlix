@@ -196,3 +196,25 @@ export const ContainerBack = styled.div`
   position: relative;
   margin: 0 auto;
 `;
+
+export const Card = styled.div`
+  .percent {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    svg {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      circle {
+        width: 100%;
+        height: 100%;
+        fill: transparent;
+        stroke-width: 2;
+        stroke: #191919;
+        transform: translate(5px, 5px);
+      }
+    }
+  }
+`;

@@ -10,35 +10,48 @@ import {
   Image,
   Input,
   MovieContainer,
-  Title
+  Title,
 } from "../styles/pages/movies";
 import { useState } from "react";
 import { parseCookies } from "nookies";
 
 export default function Movies() {
-  const { "token": token } = parseCookies();
+  let newMovies = []
+  const { token: token } = parseCookies();
   const Instance = axios.create({
-    baseURL: 'https://teste.ignisdigital.tec.br/',
+    baseURL: "https://teste.ignisdigital.tec.br/",
     timeout: 1000,
     headers: {
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   });
   const [movies, setMovies] = useState(null);
-  const [visible, setVisible] = useState(4);
+  const [id, setId] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
-
 
   useEffect(() => {
     async function getData() {
-      const res = await Instance.get("movies")
-      setMovies(res.data.results);
+      const res = await Instance.get(`movies?search=&page=${id}`);
+      newMovies = res.data.results
+      setMovies(newMovies)
     }
     getData();
   }, []);
 
-  const loadMore = () => {
-    setVisible(visible + 4);
+  const loadMore = async () => {
+    setId(id + 1);
+    try {
+      const response = await Instance.get(`movies?search=&page=${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      newMovies = [...newMovies, response.data]
+      setMovies(newMovies)
+      console.log(response.data.results)
+    } catch {
+      error(console.log(error));
+    }
   };
 
   if (movies != null) {
@@ -59,7 +72,6 @@ export default function Movies() {
           <Title>Filmes</Title>
           <MovieContainer>
             {movies
-              .slice(0, visible)
               .filter((value) => {
                 if (searchTerm === "") {
                   return value;
@@ -96,16 +108,15 @@ const renderMovies = (movie, i) => {
 };
 
 export const getServerSideProps = async (ctx) => {
-  const { 'token': token } = parseCookies(ctx)
+  const { token: token } = parseCookies(ctx);
   if (!token) {
     return {
-      redirect: '/',
+      redirect: "/",
       permanent: false,
-    }
+    };
   }
-
 
   return {
-    props: {}
-  }
-}
+    props: {},
+  };
+};

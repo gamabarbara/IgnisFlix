@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ContainerText = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const ContainerText = styled.div`
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    @media (min-width:1025px) {
+    @media (min-width: 1025px) {
       font-size: 30px;
       margin-bottom: 10px;
     }
@@ -21,12 +21,11 @@ export const ContainerText = styled.div`
     font-weight: 500;
     font-size: 12px;
     line-height: 24px;
-    @media (min-width:1025px) {
+    @media (min-width: 1025px) {
       font-size: 25px;
       margin-bottom: 10px;
     }
   }
-
 `;
 
 export const ContainerImage = styled.div`
@@ -37,16 +36,13 @@ export const ContainerImage = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
-  padding-bottom: 100px;
-  position: static;
   img {
     z-index: 0;
     background-size: cover;
-    @media (min-width:1025px) {
+    @media (min-width: 1025px) {
       width: 400px;
     }
   }
-  
 `;
 
 export const ContainerButton = styled.div`
@@ -74,8 +70,8 @@ export const Btn = styled.div`
     text-decoration: none;
     color: #fff;
   }
-  @media (min-width:1025px) {
-    width: 20%;
+  @media (min-width: 1025px) {
+    width: 450px;
     margin: 0 auto;
   }
 `;

@@ -7,6 +7,7 @@ import {
   BackdropInfo,
   BackProgressBar,
   ContainerBack,
+  Card
 } from "../styles/pages/movieCard";
 import { useState } from "react";
 export default function MovieCard(props) {
@@ -31,11 +32,14 @@ export default function MovieCard(props) {
       ) : (
         <ContainerCard>
           <ImageMovie src={props.image} />
-          <ProgressBar>
-            <div className="outer">
-              <div className="inner">{props.percentage * 10}%</div>
+          <Card>
+            <div className="percent">
+              <svg>
+                <circle cx="20" cy="20" r="20"></circle>
+                <circle cx="20" cy="20" r="20"></circle>
+              </svg>
             </div>
-          </ProgressBar>
+          </Card>
           <InfoMovie>
             <h1>{props.title}</h1>
             <p>{props.overview}</p>
