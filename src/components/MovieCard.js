@@ -32,14 +32,11 @@ export default function MovieCard(props) {
       ) : (
         <ContainerCard>
           <ImageMovie src={props.image} />
-          <Card>
-            <div className="percent">
-              <svg>
-                <circle cx="20" cy="20" r="20"></circle>
-                <circle cx="20" cy="20" r="20"></circle>
-              </svg>
-            </div>
-          </Card>
+          <ProgressBar>
+            <div className="outer">
+              <div className="inner">{props.percentage * 10}%</div>
+              </div>
+              </ProgressBar>
           <InfoMovie>
             <h1>{props.title}</h1>
             <p>{props.overview}</p>

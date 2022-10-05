@@ -35,20 +35,22 @@ export default function Movies() {
       newMovies = res.data.results
       setMovies(newMovies)
     }
+    setId(id + 1);
     getData();
   }, []);
 
   const loadMore = async () => {
     setId(id + 1);
+    console.log(id)
     try {
       const response = await Instance.get(`movies?search=&page=${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      newMovies = [...newMovies, response.data]
-      setMovies(newMovies)
-      console.log(response.data.results)
+      newMovies.push(response.data.results)
+      setMovies(...newMovies, newMovies)
+      console.log(newMovies)
     } catch {
       error(console.log(error));
     }
@@ -111,11 +113,12 @@ export const getServerSideProps = async (ctx) => {
   const { token: token } = parseCookies(ctx);
   if (!token) {
     return {
-      redirect: "/",
-      permanent: false,
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
     };
   }
-
   return {
     props: {},
   };
