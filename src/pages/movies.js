@@ -49,7 +49,7 @@ export default function Movies() {
       });
       newMovies.push(response.data.results)
       setMovies(...newMovies, newMovies)
-    } catch {
+    } catch(error) {
       console.log(error)
     }
   };

@@ -81,4 +81,10 @@ export const ToggleButton = styled.img`
   position: relative;
   bottom: 35px;
   left: 140px;
+  @media (min-width: 1025px) {
+    width: 30px;
+    height: 30px;
+    left: 200px;
+    bottom: 40px;
+  }
 `;
