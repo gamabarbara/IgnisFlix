@@ -1,5 +1,5 @@
-<p align="center>
-<img alt="IgnisFlix" src=".github/images/IgnisFlix.jpeg" width="200px">
+<p align="center">
+<img alt="IgnisFlix" src=".github/images/IgnisFlix.jpeg" width="500px" />
 </p>
 ## 🚀 Tecnologias
 
