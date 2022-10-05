@@ -218,3 +218,14 @@ export const Card = styled.div`
     }
   }
 `;
+
+export const CircularProgress = styled.div`
+  position: relative;
+  margin-top: -40px;
+  bottom: 15px;
+  left: 5px;
+  .CircularProgressbar-text {
+    transform: translate(-28px, 10px);
+}
+`;
+

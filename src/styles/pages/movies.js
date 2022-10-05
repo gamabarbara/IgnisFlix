@@ -50,13 +50,14 @@ export const MovieContainer = styled.div`
   position: relative;
   margin: 0 auto;
   width: 350px;
-  height: 400px;
+  height: 420px;
   overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
   @media (min-width: 1025px) {
-    width: 50%;
+    width: 60%;
+    height: 450px;
     margin: 0 auto;
   }
 `;

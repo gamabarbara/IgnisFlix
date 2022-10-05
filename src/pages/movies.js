@@ -41,7 +41,6 @@ export default function Movies() {
 
   const loadMore = async () => {
     setId(id + 1);
-    console.log(id)
     try {
       const response = await Instance.get(`movies?search=&page=${id}`, {
         headers: {
@@ -50,9 +49,8 @@ export default function Movies() {
       });
       newMovies.push(response.data.results)
       setMovies(...newMovies, newMovies)
-      console.log(newMovies)
     } catch {
-      error(console.log(error));
+      console.log(error)
     }
   };
 
